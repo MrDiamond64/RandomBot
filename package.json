@@ -1,0 +1,25 @@
+{
+  "name": "randombot",
+  "version": "2.1.0",
+  "description": "Best Moderation Bot",
+  "main": "RandomBot.js",
+  "dependencies": {
+    "@zuzak/owo": "^1.4.0",
+    "discord.js": "^11.5.1",
+    "figlet": "^1.2.4",
+    "giphy-js-sdk-core": "^1.0.6",
+    "jokes": "0.0.2",
+    "nodejs-base64": "^1.0.3",
+    "random-puppy": "^1.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "v1.18.9"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node .",
+    "lint": "eslint ."
+  },
+  "author": "RandomYT Videos Uploader",
+  "license": "ISC"
+}
