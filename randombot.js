@@ -13,6 +13,12 @@ const client = new Discord.Client();
 client.commands = new Discord.Collection();
 const cooldowns = new Discord.Collection();
 
+// .env stuff
+const { config } = require("dotenv");
+config({
+    path: __dirname + "/.env"
+})
+
 // Command Files Search
 const commandFiles = fs
   .readdirSync("./commands")
