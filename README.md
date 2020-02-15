@@ -50,3 +50,9 @@ Heres the following packages you will need:
   - express
       Version: 4.17.1
       This is used for the bots web dashbaord coming soon!
+
+  Section 3: Bot Hosting
+--------------------------
+How is **Random Bot** Hosted?
+We Use https://glitch.com to host our bot 24/7
+Occasional Restarts May Occur with this and we can't control this unfortunately
