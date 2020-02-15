@@ -14,9 +14,7 @@ module.exports = {
         "Uhmm NO! You dont have the right permissions to unmute people!!!"
       );
     }
-    let member = message.guild.member(
-      message.mentions.users.first() || message.guild.members.get(args[0])
-    );
+    const member = message.mentions.members.first() || message.guild.members.get(args[0]);
     let reason = args[1];
     member
       .setMute(false, reason)

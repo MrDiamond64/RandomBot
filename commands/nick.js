@@ -10,11 +10,9 @@ module.exports = {
   args: true,
   guildOnly: true,
   execute(message, args) {
-    let member = message.guild.member(
-      message.mentions.users.first() || message.guild.members.get(args[0])
-    );
+      const member = message.mentions.members.first() || message.guild.members.get(args[0]);
     if (!member) {
-      client.member.setNickname(args);
+      message.guild.me.setNickname(args);
     } else {
       message.member
         .setNickname(args[1])
