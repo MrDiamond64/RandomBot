@@ -1,7 +1,7 @@
-const Discord = require('discord.js');
-const giphyToken = (process.env.GIPHYTOKEN)
-const GphApiClient = require('giphy-js-sdk-core')
-const giphy = GphApiClient(process.env.GIPHYTOKEN)
+const Discord = require("discord.js");
+const giphyToken = process.env.GIPHYTOKEN;
+const GphApiClient = require("giphy-js-sdk-core");
+const giphy = GphApiClient(process.env.GIPHYTOKEN);
 
 module.exports = {
   name: "stickers",

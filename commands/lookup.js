@@ -28,7 +28,10 @@ module.exports = {
       .addField("Is User Bot", member.user.bot)
       .addField("Joined Discord At", member.user.createdAt)
       .addField("Last Message Sent", `Last Message: ${member.user.lastMessage}`)
-      .addField("Last Message Sent ID", `Last Message ID: ${member.user.lastMessageID}`)
+      .addField(
+        "Last Message Sent ID",
+        `Last Message ID: ${member.user.lastMessageID}`
+      )
       .setTimestamp()
       .setFooter(`Beep Bop Boop! Im a bot made in discord.js!`);
     message.channel.send(userInfo);

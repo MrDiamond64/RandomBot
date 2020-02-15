@@ -23,7 +23,7 @@ module.exports = {
           "Command Usage",
           `You can message \`${prefix}help [command name]\``
         )
-        .addField("Total Commands:", commands.size) 
+        .addField("Total Commands:", commands.size)
         .setTimestamp()
         .setFooter("Beep Boop Bop! Im a bot using discord.js!");
       message.channel.send(helpCommand);
