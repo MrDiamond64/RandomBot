@@ -1,5 +1,5 @@
 const Discord = require("discord.js");
-const jokes = require("one-liner-joke");
+const jokes = require("one-liner-joke").getRandomJoke;
 
 module.exports = {
   name: "joke",
@@ -7,9 +7,8 @@ module.exports = {
   aliases: ["randomjoke", "funny", "laugh"],
   usage: `[custom tag]`,
   execute(message, args) {
-    var joke = jokes.getRandomJoke({
-    'exclude_tags': ['dirty', 'racist', 'marriage']
-  });
+    var joke = jokes({ exclude_tags: ["dirty", "racist", "marriage", "death"] })
+      .body;
     const jokeGen = new Discord.RichEmbed()
       .setColor("RANDOM")
       .setTitle("Joke Genorator")

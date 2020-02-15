@@ -1,0 +1,5 @@
+# db files
+./prefixes.json
+
+# .env secrest
+.env
