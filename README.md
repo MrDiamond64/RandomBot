@@ -66,6 +66,14 @@ Heres the following packages you will need:
       
       This is used to encode text to Base64 and decode Base64 code
       
+  - one-line-joke
+    
+      Version: 1.2.0
+      
+      Command Used In: "joke"
+      
+      About: This is used to grab a random joke
+      
   - random-puppy
   
       Version: 1.1.0
