@@ -31,30 +31,55 @@ This discord bot used NPM for 3rd party extension like discord.js!
 Heres the following packages you will need:
   - @zuzak/owo
       Version: 1.5.1
+      
       Commands Used In: "owo"
+      
       This is used for the #owo command which OwOifys text
+      
   - discord.js
+  
       Version: 11.5.1
+      
       This is used to communicate with the discord API
+      
   - figlet
+  
       Version: 1.2.4
+      
       Commands Used In: "ascii"
+      
       This is used for the #ascii command, it coverts text to ASCII art
+      
   - giphy-js-sdk-core
+  
       Version: 1.0.6
+      
       Commands Used In: "giphy", "sticker"
+      
       This is used to communicate to the Giphy API
+      
   - nodejs-base64
+  
       Version: 1.0.3
+      
       Commands Used In: "base64"
-      This is used to encode text to Base64 and decode BAse64 code
+      
+      This is used to encode text to Base64 and decode Base64 code
+      
   - random-puppy
+  
       Version: 1.1.0
+      
       Commands Used In: "meme"
+      
       This is used to grab a random image from reddit
+      
   - express
+  
       Version: 4.17.1
+      
       This is used for the bots web dashbaord coming soon!
+      
 
   Section 3: Bot Hosting
 --------------------------
