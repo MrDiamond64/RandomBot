@@ -1,22 +1,22 @@
 dependencies:
-  '@zuzak/owo': 1.4.0
+  '@zuzak/owo': 1.5.1
   discord.js: 11.5.1
   express: 4.17.1
   figlet: 1.2.4
   giphy-js-sdk-core: 1.0.6
-  jokes: 0.0.2
   nodejs-base64: 1.0.3
+  one-liner-joke: 1.2.0
   random-puppy: 1.1.0
 devDependencies:
   nodemon: 1.18.9
 packages:
-  /@zuzak/owo/1.4.0:
+  /@zuzak/owo/1.5.1:
     dependencies:
       random-item: 1.0.0
       replace-string: 2.0.0
     dev: false
     resolution:
-      integrity: sha512-xKrxVlYYWAvk754uU5OCMMSt0TjfNxwSkjzba1Tpdx4nlG78zXcsJNCUU9JyGXnHtMLpH1EAeT1MnphFOeNPlg==
+      integrity: sha512-319OZDJm+nBB9VANSenfOaTsDzoos7MUeKqQm+GeJccaOCr4ey9EZ59bnGScUKL11aV41rUk6zb865xJEMeU8Q==
   /abbrev/1.1.1:
     dev: true
     resolution:
@@ -1044,10 +1044,6 @@ packages:
     dev: false
     resolution:
       integrity: sha1-YRrhrPFPXoH3KVB0coGf6XM1WKk=
-  /jokes/0.0.2:
-    dev: false
-    resolution:
-      integrity: sha1-W9D1felMGFEVjsjyvL/l0W/fgHE=
   /kind-of/3.2.2:
     dependencies:
       is-buffer: 1.1.6
@@ -1335,6 +1331,12 @@ packages:
       node: '>= 0.8'
     resolution:
       integrity: sha1-IPEzZIGwg811M3mSoWlxqi2QaUc=
+  /one-liner-joke/1.2.0:
+    dev: false
+    engines:
+      node: '>=6.0.0'
+    resolution:
+      integrity: sha512-cyqGnIRKCe25ZERjlyKtpQp4BfN+iV22nC6rLtTMkJh+w300DK+9UitFzJZfilMdFKImKQO+w/G/E1sUSYBsrw==
   /p-finally/1.0.0:
     dev: true
     engines:
@@ -2009,12 +2011,12 @@ registry: 'https://registry.npmjs.org/'
 shrinkwrapMinorVersion: 9
 shrinkwrapVersion: 3
 specifiers:
-  '@zuzak/owo': ^1.4.0
+  '@zuzak/owo': ^1.5.1
   discord.js: ^11.5.1
   express: ^4.17.1
   figlet: ^1.2.4
   giphy-js-sdk-core: ^1.0.6
-  jokes: 0.0.2
   nodejs-base64: ^1.0.3
   nodemon: v1.18.9
+  one-liner-joke: ^1.2.0
   random-puppy: ^1.1.0
