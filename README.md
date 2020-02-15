@@ -66,7 +66,7 @@ Heres the following packages you will need:
       
       This is used to encode text to Base64 and decode Base64 code
       
-  - one-line-joke
+  - one-liner-joke
     
       Version: 1.2.0
       
@@ -88,6 +88,11 @@ Heres the following packages you will need:
       
       This is used for the bots web dashbaord coming soon!
       
+  - dotenv
+  
+  Version: 8.2.o
+  
+  About: Allows procces.env tokens
 
   Section 3: Bot Hosting
 --------------------------
