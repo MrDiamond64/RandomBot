@@ -9,13 +9,15 @@ module.exports = {
   args: true,
   execute(message, args) {
     if (!message.member.hasPermission("BAN_MEMBERS")) {
-      message.reply("Uhmm NO! You dont have the right permissions to ban people!!!");
+      message.reply(
+        "Uhmm NO! You dont have the right permissions to ban people!!!"
+      );
       return;
     }
     message.react("🔨");
-    const member = message.mentions.members.first() || message.guild.members.get(args[0]);
-
-    if (!member) return message.reply("Umm I dont think thats a real person ");
+    const member =
+      message.mentions.members.first() || message.guild.members.get(args[0]);
+    
     if (!member.bannable)
       return message.reply(
         "I cannot ban this user! Do they have a higher role? Do I have ban permissions?"
@@ -25,7 +27,9 @@ module.exports = {
     member
       .ban(reason)
       .catch(error =>
-        message.reply(`Sorry ${message.author} I couldn't ban because of : ${error}`)
+        message.reply(
+          `Sorry ${message.author} I couldn't ban because of : ${error}`
+        )
       );
 
     // Mod Logs

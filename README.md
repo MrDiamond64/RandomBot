@@ -1,27 +1,96 @@
-Welcome to Glitch
+  Random Bot
 =================
 
-Click `Show` in the header to see your app live. Updates to your code will instantly deploy and update live.
-
-**Glitch** is the friendly community where you'll build the app of your dreams. Glitch lets you instantly create, remix, edit, and host an app, bot or site, and you can invite collaborators or helpers to simultaneously edit code with you.
-
-Find out more [about Glitch](https://glitch.com/about).
+Welcome To Random Bot!
+**Random Bot** Is a Fully Open-Source Multi-Purpose Discord Bot Made Entirely In Javascript!
+Proudly Hosted on https://glitch.com!
 
 
-Your Project
+  Section 1: Tokens
 ------------
 
-On the front-end,
-- edit `public/client.js`, `public/style.css` and `views/index.html`
-- drag in `assets`, like images or music, to add them to your project
+What is a token, anyway?
+-------------------------------
+A token is essentially your bot's password; it's what your bot uses to login to Discord. With that being said, it is vital that you do not ever share this token with anybody, purposely or accidentally. If someone does manage to get a hold of your token, they can use your bot as if it were theirs—this means they can perform malicious acts with it.
 
-On the back-end,
-- your app starts at `server.js`
-- add frameworks and packages in `package.json`
-- safely store app secrets in `.env` (nobody can see this but you and people you invite)
+You can edit you token by the .env file.
+You can get your token Here: https://discordapp.com/developers/applications/
 
+Giphy Token
+------------------
 
-Made by [Glitch](https://glitch.com/)
+Whats a Giphy Token?
 -------------------
+A Giphy token is a token to communicate with the Free Giphy servers. Its free to use!
+This can be used for the #sticker and #giphy commands!
 
-\ ゜o゜)ノ
+  Section 2: NPM Packages
+-----------------------
+This discord bot used NPM for 3rd party extension like discord.js!
+
+Heres the following packages you will need:
+  - @zuzak/owo
+      Version: 1.5.1
+      
+      Commands Used In: "owo"
+      
+      This is used for the #owo command which OwOifys text
+      
+  - discord.js
+  
+      Version: 11.5.1
+      
+      This is used to communicate with the discord API
+      
+  - figlet
+  
+      Version: 1.2.4
+      
+      Commands Used In: "ascii"
+      
+      This is used for the #ascii command, it coverts text to ASCII art
+      
+  - giphy-js-sdk-core
+  
+      Version: 1.0.6
+      
+      Commands Used In: "giphy", "sticker"
+      
+      This is used to communicate to the Giphy API
+      
+  - nodejs-base64
+  
+      Version: 1.0.3
+      
+      Commands Used In: "base64"
+      
+      This is used to encode text to Base64 and decode Base64 code
+      
+  - one-line-joke
+    
+      Version: 1.2.0
+      
+      Command Used In: "joke"
+      
+      About: This is used to grab a random joke
+      
+  - random-puppy
+  
+      Version: 1.1.0
+      
+      Commands Used In: "meme"
+      
+      This is used to grab a random image from reddit
+      
+  - express
+  
+      Version: 4.17.1
+      
+      This is used for the bots web dashbaord coming soon!
+      
+
+  Section 3: Bot Hosting
+--------------------------
+How is **Random Bot** Hosted?
+We Use https://glitch.com to host our bot 24/7
+Occasional Restarts May Occur with this and we can't control this unfortunately
