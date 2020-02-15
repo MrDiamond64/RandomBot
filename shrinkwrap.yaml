@@ -1,6 +1,7 @@
 dependencies:
   '@zuzak/owo': 1.5.1
   discord.js: 11.5.1
+  dotenv: 8.2.0
   express: 4.17.1
   figlet: 1.2.4
   giphy-js-sdk-core: 1.0.6
@@ -459,6 +460,12 @@ packages:
       node: '>=4'
     resolution:
       integrity: sha512-tUMXrxlExSW6U2EXiiKGSBVdYgtV8qlHL+C10TsW4PURY/ic+eaysnSkwB4kA/mBlCyy/IKDJ+Lc3wbWeaXtuQ==
+  /dotenv/8.2.0:
+    dev: false
+    engines:
+      node: '>=8'
+    resolution:
+      integrity: sha512-8sJ78ElpbDJBHNeBzUbUVLsqKdccaa/BXF1uPTw3GrvQTBgrQrtObr2mUrE38vzYd8cEv+m/JBfDLioYcfXoaw==
   /duplexer3/0.1.4:
     resolution:
       integrity: sha1-7gHdHKwO08vH/b6jfcCo8c4ALOI=
@@ -2013,6 +2020,7 @@ shrinkwrapVersion: 3
 specifiers:
   '@zuzak/owo': ^1.5.1
   discord.js: ^11.5.1
+  dotenv: ^8.2.0
   express: ^4.17.1
   figlet: ^1.2.4
   giphy-js-sdk-core: ^1.0.6
