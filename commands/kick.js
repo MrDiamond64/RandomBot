@@ -16,9 +16,7 @@ module.exports = {
       return;
     }
     message.react("🥾");
-    let member = message.guild.member(
-      message.mentions.users.first() || message.guild.members.get(args[0])
-    );
+    const member = message.mentions.members.first() || message.guild.members.get(args[0]);
 
     if (!member) return message.reply("Umm I dont think thats a real person ");
     if (!member.kickable)
