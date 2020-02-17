@@ -14,7 +14,7 @@ module.exports = {
       .setColor("RANDOM")
       .setTitle("OwOify")
       .setDescription(`UwU! Covewted!`)
-      .addField(`UwUed Text!`, owoText)
+      .addField(owoText, `.`)
       .setTimestamp()
       .setFooter("<3 Beep Boop Bop! Im a bot using discowd.js! xD");
     message.reply(owoCommand);

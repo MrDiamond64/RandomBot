@@ -1,5 +1,4 @@
 const Discord = require("discord.js");
-const client = new Discord.Client();
 
 module.exports = {
   name: "nick",
@@ -9,19 +8,33 @@ module.exports = {
   cooldown: 5,
   args: true,
   guildOnly: true,
-  execute(message, args) {
-      const member = message.mentions.members.first() || message.guild.members.get(args[0]);
-    if (!member) {
-      message.guild.me.setNickname(args);
-    } else {
-      message.member
-        .setNickname(args[1])
-        .catch(error =>
-          message.reply(
-            `Sorry ${message.author} I couldn't Nickname because of : ${error}! Contact Support`
-          )
-        );
-      message.reply(`placeholder`);
+  execute(message, args, argstring) {
+    if (!message.member.hasPermission("BAN_MEMBERS")) {
+      message.reply(
+        "Uhmm NO! You dont have the right permissions to ban people!!!"
+      );
+      return;
     }
+
+    if (
+      !message.mentions.members.first() ||
+      message.guild.members.get(args[0])
+    ) {
+      message.guild.me.setNickname(argstring);
+    } else {
+      var member =
+        message.mentions.members.first() || message.guild.members.get(args[0]);
+      member.setNickname(args[1], args[2]);
+    }
+    const setNick = new Discord.RichEmbed()
+      .setColor("RANDOM")
+      .setTitle("Nickname Manager")
+      .setDescription("Sucessfully Set Nickanme!")
+      .addField("User:", member)
+      .addField("Reason:", args[2])
+      .addField("Moderator:", message.author)
+      .setTimestamp()
+      .setFooter("Beep Boop Bop! Im a bot using discord.js!");
+    message.channel.send(setNick);
   }
 };

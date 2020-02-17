@@ -1,5 +1,6 @@
 const { prefix, botownerID } = require("../config.json");
 const Discord = require("discord.js");
+const error = require("../util/error.js")
 
 module.exports = {
   name: "ban",
@@ -8,12 +9,7 @@ module.exports = {
   guildOnly: true,
   args: true,
   execute(message, args) {
-    if (!message.member.hasPermission("BAN_MEMBERS")) {
-      message.reply(
-        "Uhmm NO! You dont have the right permissions to ban people!!!"
-      );
-      return;
-    }
+    if (!message.member.hasPermission("BAN_MEMBERS" || "ADMINISTRATOR")) return error(message, `${prefix}ban`, "BAN_MEMBERS")
     message.react("🔨");
     const member =
       message.mentions.members.first() || message.guild.members.get(args[0]);

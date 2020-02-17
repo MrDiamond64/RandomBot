@@ -90,7 +90,7 @@ Heres the following packages you will need:
       
   - dotenv
   
-  Version: 8.2.0
+  Version: 8.2.o
   
   About: Allows procces.env tokens
 
