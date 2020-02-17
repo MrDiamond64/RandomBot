@@ -1,5 +1,6 @@
-# db files
-./prefixes.json
+# database content
+database/prefixes.json
 
-# .env secrest
+
+# .env secrets
 .env

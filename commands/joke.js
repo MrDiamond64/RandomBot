@@ -11,7 +11,7 @@ module.exports = {
       .body;
     const jokeGen = new Discord.RichEmbed()
       .setColor("RANDOM")
-      .setTitle("Joke Genorator")
+      .setTitle("Joke Generater")
       .setDescription(`Random Joke Selected!`)
       .addField("The Joke", joke, true)
       .setTimestamp()

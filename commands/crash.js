@@ -7,6 +7,5 @@ module.exports = {
   description: "Sends The iOS Crash Gif!",
   execute(message, args) {
     message.channel.send(`Time To Crash iOS Discord! :smile: ${crashgif}`);
-    link: [crashgif];
   }
 };

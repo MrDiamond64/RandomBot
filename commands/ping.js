@@ -20,7 +20,7 @@ module.exports = {
         true
       )
       .addField("Api Latency:", `${Math.round(client.ping)}ms`, true)
-      .addField("Status:", `Command In Progress`, false)
+//      .addField("Status:", `Command In Progress`, false)
       .setTimestamp()
       .setFooter("Beep Boop Bop! Im a bot made in discord.js!");
     msg.edit(pingInfo);
