@@ -7,7 +7,7 @@ module.exports = {
   usage: `[text]`,
   args: true,
   guildOnly: true,
-  execute(message, argstring) {
+  execute(message, args, argstring) {
     if (!message.member.hasPermission("MENTION_EVERYONE")) {
       message.reply(
         "Uhmm NO! You dont have the right permissions to mention everyone!!!"

@@ -1,5 +1,5 @@
 # database content
-database/prefixes.json
+.data/prefixes.json
 
 
 # .env secrets
