@@ -5,6 +5,7 @@ const express = require("express");
 const http = require('http');
 const app = express();
 const path = require("path");
+let serverPrefix = JSON.parse(fs.readFileSync("./.data/prefixes.json", "utf8"));
 const log = require("./util/log.js")
 // Load Needed Variables
 const { prefix, bannedIDs } = require("./config.json");
@@ -12,13 +13,7 @@ const { prefix, bannedIDs } = require("./config.json");
 const client = new Discord.Client();
 client.commands = new Discord.Collection();
 const cooldowns = new Discord.Collection();
-
-// .env stuff
-const { config } = require("dotenv");
-config({
-    path: __dirname + "/.env"
-})
-
+ 
 // Command Files Search
 const commandFiles = fs
   .readdirSync("./commands")
@@ -39,7 +34,7 @@ client.once("ready", async () => {
     `Bot Status: ${client.users.size} Users, ${client.channels.size} Channels in ${client.guilds.size} Servers.`
   );
   client.user.setActivity(
-    `Prefix ${prefix}, Serving ${client.guilds.size} servers with ${client.users.size} Users!`
+    `${prefix}help, Serving ${client.guilds.size} servers with ${client.users.size} Users!`
   );
 });
 
@@ -97,7 +92,14 @@ client.on("guildMemberRemove", async member => {
 
 // Command Handler
 client.on("message", async message => {
-  if (!message.content.startsWith(prefix) || message.author.bot) return;
+  serverPrefix = JSON.parse(fs.readFileSync("./.data/prefixes.json", "utf8"));
+  if(!serverPrefix[message.guild.id]) {
+    serverPrefix[message.guild.id] = {
+      prefixes: prefix
+    }
+  }
+  let usePrefix = serverPrefix[message.guild.id].prefixes
+  if (!message.content.startsWith(usePrefix) || message.author.bot) return;
   const args = message.content.slice(prefix.length).split(/ +/);
   const commandName = args.shift().toLowerCase();
   const argstring = args.slice(0).join(" ");
@@ -183,7 +185,7 @@ client.on("message", async message => {
       command.execute(message, args, argstring, commandName);
     } catch (error) {
       console.error(error);
-      log.logError(message, commandName, error)
+//      log.logError(message, commandName, error)
       message.react("❌");
       const commandCrash = new Discord.RichEmbed()
         .setColor("RED")
