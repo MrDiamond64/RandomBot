@@ -9,7 +9,7 @@ Proudly Hosted on https://glitch.com!
   Section 1: Tokens
 ------------
 
-What is a token, anyway?
+Discord Tokens
 -------------------------------
 A token is essentially your bot's password; it's what your bot uses to login to Discord. With that being said, it is vital that you do not ever share this token with anybody, purposely or accidentally. If someone does manage to get a hold of your token, they can use your bot as if it were theirs—this means they can perform malicious acts with it.
 
@@ -18,9 +18,6 @@ You can get your token Here: https://discordapp.com/developers/applications/
 
 Giphy Token
 ------------------
-
-Whats a Giphy Token?
--------------------
 A Giphy token is a token to communicate with the Free Giphy servers. Its free to use!
 This can be used for the #sticker and #giphy commands!
 
@@ -34,13 +31,13 @@ Heres the following packages you will need:
       
       Commands Used In: "owo"
       
-      This is used for the #owo command which OwOifys text
+      About: This is used for the #owo command which OwOifys text
       
   - discord.js
   
       Version: 11.5.1
       
-      This is used to communicate with the discord API
+      About: This is used to communicate with the discord API
       
   - figlet
   
@@ -48,7 +45,7 @@ Heres the following packages you will need:
       
       Commands Used In: "ascii"
       
-      This is used for the #ascii command, it coverts text to ASCII art
+      About: This is used for the #ascii command, it coverts text to ASCII art
       
   - giphy-js-sdk-core
   
@@ -56,7 +53,7 @@ Heres the following packages you will need:
       
       Commands Used In: "giphy", "sticker"
       
-      This is used to communicate to the Giphy API
+      About: This is used to communicate to the Giphy API
       
   - nodejs-base64
   
@@ -64,7 +61,7 @@ Heres the following packages you will need:
       
       Commands Used In: "base64"
       
-      This is used to encode text to Base64 and decode Base64 code
+      About: This is used to encode text to Base64 and decode Base64 code
       
   - one-liner-joke
     
@@ -80,19 +77,7 @@ Heres the following packages you will need:
       
       Commands Used In: "meme"
       
-      This is used to grab a random image from reddit
-      
-  - express
-  
-      Version: 4.17.1
-      
-      This is used for the bots web dashbaord coming soon!
-      
-  - dotenv
-  
-  Version: 8.2.o
-  
-  About: Allows procces.env tokens
+      About: This is used to grab a random image from reddit
 
   Section 3: Bot Hosting
 --------------------------
