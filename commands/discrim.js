@@ -13,13 +13,10 @@ module.exports = {
       message.reply(`Invalid Discriminator! Pick One between 0001 to 9999`);
       return;
     }
-    var allMembers = message.guild.members
-      .members()
-      .filter(wantedMembers => wantedMembers.endsWith("#${discrim}"));
-
-    for (const wantedMembers of allMembers) {
-      var members = wantedMembers;
-    }
+    // allMember 
+    var members= message.guild.members
+      
+  //var members = allMember.indexOf("#${discrim}")
 
     if (members == "")
       return message.reply(
@@ -29,8 +26,8 @@ module.exports = {
     const discrimCommand = new Discord.RichEmbed()
       .setColor("RANDOM")
       .setTitle("Discriminator")
-      .addField("Member Count with discriminator ${discrim}", members.size)
-      .addField("Members with discriminator ${discrim}", members)
+      .addField(`Member Count with discriminator ${discrim}:`, members.size)
+      .addField(`Members with discriminator ${discrim}:`, JSON.stringify(members))
       .setTimestamp()
       .setFooter("Beep Boop Bop! Im a bot using discord.js!");
     message.channel.send(discrimCommand);

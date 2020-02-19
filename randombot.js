@@ -28,7 +28,7 @@ for (const file of commandFiles) {
 client.once("ready", async () => {
   console.log("Bot Starting!");
   console.log(
-    `Logged in as ${client.user.tag}, with the ID of ${client.user.id} !`
+    `Logged in as ${client.user.tag}, with the ID of ${client.user.id}!`
   );
   console.log(
     `Bot Status: ${client.users.size} Users, ${client.channels.size} Channels in ${client.guilds.size} Servers.`
@@ -122,7 +122,7 @@ client.on("message", async message => {
       .setDescription(`Guild-Only Command`)
       .addField(
         `This Command Is Only Avaible To Servers!`,
-        `Command: ${prefix}${commandName}`
+        `Command: ${usePrefix}${commandName}`
       )
       .setTimestamp()
       .setFooter("Beep Boop Bop! Im a bot using discord.js!");
@@ -138,11 +138,11 @@ client.on("message", async message => {
         .setDescription(`Arguments Needed`)
         .addField(
           `To use this command you need arguments!`,
-          `Command: ${prefix}${commandName}`
+          `Command: ${usePrefix}${commandName}`
         )
         .addField(
           "Command Usage:",
-          `**${prefix}${command.name} ${command.usage}**`
+          `**${usePrefix}${command.name} ${command.usage}**`
         )
         .setTimestamp()
         .setFooter("Beep Boop Bop! Im a bot using discord.js!");
@@ -167,7 +167,7 @@ client.on("message", async message => {
         .setDescription(
           `Wow Wow Wow Buddy! You Need To Wait Before Using This Command Again!`
         )
-        .addField(`Command:`, `${prefix}${commandName}`)
+        .addField(`Command:`, `${usePrefix}${commandName}`)
         .addField("Time Left:", `${timeLeft.toFixed(1)} seconds`)
         .setTimestamp()
         .setFooter("Beep Boop Bop! Im a bot using discord.js!");
@@ -193,7 +193,7 @@ client.on("message", async message => {
         .setDescription(`Skrrrt Crash!`)
         .addField(
           `Aw Man! The Command Has Crashed! To Protect The Bot The Command Has Been Stopped`,
-          `Command: ${prefix}${commandName}`
+          `Command: ${usePrefix}${commandName}`
         )
         .addField("Error Log:", error, true)
         .setTimestamp()

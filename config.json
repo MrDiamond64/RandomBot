@@ -1,5 +1,7 @@
 {
+  "token": "token-goes-here",
 	"prefix": "#",
+  "giphyToken": "giphy-token-goes here",
 	"botownerID" : "217861303157391361",
 	"bannedIDs"  : "452947094173384735"
 }
