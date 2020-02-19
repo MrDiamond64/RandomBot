@@ -10,9 +10,7 @@
     "giphy-js-sdk-core": "^1.0.6",
     "nodejs-base64": "^1.0.3",
     "one-liner-joke": "^1.2.0",
-    "random-puppy": "^1.1.0",
-    "express": "^4.17.1",
-    "dotenv": "^8.2.0"
+    "random-puppy": "^1.1.0"
   },
   "engines": {
     "node": "10.15.3"
