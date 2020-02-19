@@ -8,7 +8,7 @@ const path = require("path");
 let serverPrefix = JSON.parse(fs.readFileSync("./.data/prefixes.json", "utf8"));
 const log = require("./util/log.js")
 // Load Needed Variables
-const { prefix, bannedIDs } = require("./config.json");
+const { token, prefix, bannedIDs } = require("./config.json");
 // Colections
 const client = new Discord.Client();
 client.commands = new Discord.Collection();
@@ -211,19 +211,4 @@ client.on("error", error => {
     console.error("Unhandled promise rejection:", error);
   });
 client.on("error", console.error);
-client.login(process.env.TOKEN);
-
-// Glicth Modules Only
-app.get("/", (request, response) => {
-  console.log("Ping received!");
-  response.sendStatus(200);
-});
-
-app.use(express.static('public'));
-
-app.get("/", function(req, res) {
-  res.sendFile(__dirname + "/views/index.html");
-});
-const listener = app.listen(process.env.PORT, function() {
-  console.log("Your app is listening on port " + listener.address().port);
-});
+client.login(token);
