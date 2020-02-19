@@ -25,7 +25,7 @@ module.exports = {
         .setColor("RANDOM")
         .setTitle("Avatar Grabber")
         .setURL(user.displayAvatarURL)
-        .setDescription(`${message.author.username}'s Profile Picture `)
+        .setDescription(`${user.username}'s Profile Picture `)
         .setThumbnail(user.displayAvatarURL)
         .addField("Avatar Picture URL", user.displayAvatarURL)
         .setTimestamp()
