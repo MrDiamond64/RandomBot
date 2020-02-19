@@ -1,9 +1,7 @@
 // Bootup needed tools
 const fs = require("fs");
 const Discord = require("discord.js");
-const express = require("express");
 const http = require('http');
-const app = express();
 const path = require("path");
 let serverPrefix = JSON.parse(fs.readFileSync("./.data/prefixes.json", "utf8"));
 const log = require("./util/log.js")
