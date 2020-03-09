@@ -1,13 +1,12 @@
 dependencies:
   '@zuzak/owo': 1.5.1
   discord.js: 11.5.1
-  dotenv: 8.2.0
   express: 4.17.1
   figlet: 1.2.4
   giphy-js-sdk-core: 1.0.6
   nodejs-base64: 1.0.3
   one-liner-joke: 1.2.0
-  random-puppy: 1.1.0
+  redditrandom: 0.1.16
 devDependencies:
   nodemon: 1.18.9
 packages:
@@ -226,6 +225,7 @@ packages:
     resolution:
       integrity: sha1-1UVjW+HjPFQmScaRc+Xeas+uNN0=
   /capture-stack-trace/1.0.1:
+    dev: true
     engines:
       node: '>=0.10.0'
     resolution:
@@ -356,6 +356,7 @@ packages:
   /create-error-class/3.0.2:
     dependencies:
       capture-stack-trace: 1.0.1
+    dev: true
     engines:
       node: '>=0.10.0'
     resolution:
@@ -460,13 +461,8 @@ packages:
       node: '>=4'
     resolution:
       integrity: sha512-tUMXrxlExSW6U2EXiiKGSBVdYgtV8qlHL+C10TsW4PURY/ic+eaysnSkwB4kA/mBlCyy/IKDJ+Lc3wbWeaXtuQ==
-  /dotenv/8.2.0:
-    dev: false
-    engines:
-      node: '>=8'
-    resolution:
-      integrity: sha512-8sJ78ElpbDJBHNeBzUbUVLsqKdccaa/BXF1uPTw3GrvQTBgrQrtObr2mUrE38vzYd8cEv+m/JBfDLioYcfXoaw==
   /duplexer3/0.1.4:
+    dev: true
     resolution:
       integrity: sha1-7gHdHKwO08vH/b6jfcCo8c4ALOI=
   /ee-first/1.1.1:
@@ -505,10 +501,6 @@ packages:
       node: '>= 0.6'
     resolution:
       integrity: sha1-Qa4u62XvpiJorr/qg6x9eSmbCIc=
-  /eventemitter3/1.2.0:
-    dev: false
-    resolution:
-      integrity: sha1-HIaZHYFq0eUEdQ5zh0Ik7PO+xQg=
   /execa/0.7.0:
     dependencies:
       cross-spawn: 5.1.0
@@ -682,6 +674,7 @@ packages:
     resolution:
       integrity: sha512-+ux3lx6peh0BpvY0JebGyZoiR4D+oYzdPZMKJwkZ+sFkNJzpL7tXc/wehS49gUAxg3tmMHPHZkA8JU2rhhgDHw==
   /get-stream/3.0.0:
+    dev: true
     engines:
       node: '>=4'
     resolution:
@@ -729,6 +722,7 @@ packages:
       timed-out: 4.0.1
       unzip-response: 2.0.1
       url-parse-lax: 1.0.0
+    dev: true
     engines:
       node: '>=4'
     resolution:
@@ -1002,11 +996,13 @@ packages:
     resolution:
       integrity: sha512-h5PpgXkWitc38BBMYawTYMWJHFZJVnBquFE57xFpjB8pJFiF6gZ+bU+WyI/yqXiFR5mdLsgYNaPe8uao6Uv9Og==
   /is-redirect/1.0.0:
+    dev: true
     engines:
       node: '>=0.10.0'
     resolution:
       integrity: sha1-HQPd7VO9jbDzDCbk+V02/HyH3CQ=
   /is-retry-allowed/1.2.0:
+    dev: true
     engines:
       node: '>=0.10.0'
     resolution:
@@ -1096,6 +1092,7 @@ packages:
     resolution:
       integrity: sha512-XsP+KhQif4bjX1kbuSiySJFNAehNxgLb6hPRGJ9QsUr8ajHkuXGdrHmFUTUUXhDwVX2R5bY4JNZEwbUiMhV+MA==
   /lowercase-keys/1.0.1:
+    dev: true
     engines:
       node: '>=0.10.0'
     resolution:
@@ -1410,6 +1407,7 @@ packages:
     resolution:
       integrity: sha1-AerA/jta9xoqbAL+q7jB/vfgDqs=
   /prepend-http/1.0.4:
+    dev: true
     engines:
       node: '>=0.10.0'
     resolution:
@@ -1457,16 +1455,6 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha1-Fu4xYmywUMihaGpfD0KmuZoqrxE=
-  /random-puppy/1.1.0:
-    dependencies:
-      eventemitter3: 1.2.0
-      got: 6.7.1
-      unique-random-array: 1.0.1
-    dev: false
-    engines:
-      node: '>=4.0.0'
-    resolution:
-      integrity: sha1-GtqjTA83bVArWdb9gifqYaRUmTs=
   /range-parser/1.2.1:
     dev: false
     engines:
@@ -1516,6 +1504,12 @@ packages:
       node: '>=0.10'
     resolution:
       integrity: sha512-1JU/8q+VgFZyxwrJ+SVIOsh+KywWGpds3NTqikiKpDMZWScmAYyKIgqkO+ARvNWJfXeXR1zxz7aHF4u4CyH6vQ==
+  /redditrandom/0.1.16:
+    dependencies:
+      snekfetch: 4.0.4
+    dev: false
+    resolution:
+      integrity: sha512-dHrf0qmfOH53YclP3BREq4cH45T3PrtSgXLDAHT773UYu/o+rhxoa4DUsFcarFWm3V48wGST9TbVvWUZI8VzMw==
   /regex-not/1.0.2:
     dependencies:
       extend-shallow: 3.0.2
@@ -1576,6 +1570,7 @@ packages:
     resolution:
       integrity: sha512-Gd2UZBJDkXlY7GbJxfsE8/nvKkUEU1G38c1siN6QP6a9PT9MmHB8GnpscSmMJSoF8LOIrt8ud/wPtojys4G6+g==
   /safe-buffer/5.2.0:
+    dev: true
     resolution:
       integrity: sha512-fZEwUGbVl7kouZs1jCdMLdt95hdIv0ZeHg6L7qPeciMZhZ+/gdesW4wgTARkrFWEpspjEATAzUGPG8N2jJiwbg==
   /safe-regex/1.1.0:
@@ -1703,6 +1698,11 @@ packages:
     dev: false
     resolution:
       integrity: sha512-NjxjITIj04Ffqid5lqr7XdgwM7X61c/Dns073Ly170bPQHLm6jkmelye/eglS++1nfTWktpP6Y2bFXjdPlQqdw==
+  /snekfetch/4.0.4:
+    deprecated: use node-fetch instead
+    dev: false
+    resolution:
+      integrity: sha512-dyycG9fvwtSJqKPfMVOpXt+60qvMGe7vWLwOJDiSJaiAx+hs2EnFChG2bXCWn7ulz+zGzrHdN9/yeEb0YqEPww==
   /source-map-resolve/0.5.3:
     dependencies:
       atob: 2.1.2
@@ -1798,6 +1798,7 @@ packages:
     resolution:
       integrity: sha1-RYuDiH8oj8Vtb/+/rSYuJmOO+mk=
   /timed-out/4.0.1:
+    dev: true
     engines:
       node: '>=0.10.0'
     resolution:
@@ -1873,20 +1874,6 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha512-tJfXmxMeWYnczCVs7XAEvIV7ieppALdyepWMkHkwciRpZraG/xwT+s2JN8+pr1+8jCRf80FFzvr+MpQeeoF4Xg==
-  /unique-random-array/1.0.1:
-    dependencies:
-      unique-random: 1.0.0
-    dev: false
-    engines:
-      node: '>=0.10.0'
-    resolution:
-      integrity: sha512-z9J/SV8CUIhIRROcHe9YUoAT6XthUJt0oUyLGgobiXJprDP9O9dsErNevvSaAv5BkhwFEVPn6nIEOKeNE6Ck1Q==
-  /unique-random/1.0.0:
-    dev: false
-    engines:
-      node: '>=0.10.0'
-    resolution:
-      integrity: sha1-zj4iTIJCzTOg53sNcYDXfmti0MQ=
   /unique-string/1.0.0:
     dependencies:
       crypto-random-string: 1.0.0
@@ -1911,6 +1898,7 @@ packages:
     resolution:
       integrity: sha1-g3aHP30jNRef+x5vw6jtDfyKtVk=
   /unzip-response/2.0.1:
+    dev: true
     engines:
       node: '>=4'
     resolution:
@@ -1945,6 +1933,7 @@ packages:
   /url-parse-lax/1.0.0:
     dependencies:
       prepend-http: 1.0.4
+    dev: true
     engines:
       node: '>=0.10.0'
     resolution:
@@ -2020,11 +2009,10 @@ shrinkwrapVersion: 3
 specifiers:
   '@zuzak/owo': ^1.5.1
   discord.js: ^11.5.1
-  dotenv: ^8.2.0
   express: ^4.17.1
   figlet: ^1.2.4
   giphy-js-sdk-core: ^1.0.6
   nodejs-base64: ^1.0.3
   nodemon: v1.18.9
   one-liner-joke: ^1.2.0
-  random-puppy: ^1.1.0
+  redditrandom: ^0.1.12

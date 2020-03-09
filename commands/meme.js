@@ -1,5 +1,5 @@
 const Discord = require("discord.js");
-const randomPuppy = require("random-puppy");
+let reddit = require("redditrandom");
 
 module.exports = {
   name: "meme",
@@ -7,14 +7,16 @@ module.exports = {
   aliases: ["memes", "dankmemes", "me_irl"],
   cooldown: 5,
   execute(message, args) {
-    const img = randomPuppy(dankmemes);
-    const memeEmbed = new Discord.RichEmbed()
-      .setColor("RANDOM")
-      .setImage(img)
-      .setTitle(`From /r/${random}`)
-      .setURL(`https://reddit.com/r/dankmemes`)
-      .setTimestamp()
-      .setFooter("Beep Boop Bop! Im a bot using discord.js!");
-    message.channel.send(memeEmbed);
+    let entitledParents = async function() {
+      let post = reddit.get("dankmemes");
+      var img = post;
+      const memeEmbed = new Discord.RichEmbed()
+        .setColor("RANDOM")
+        .setURL(img)
+      	.setThumbnail(img)
+        .setTimestamp()
+        .setFooter("Beep Boop Bop! Im a bot using discord.js!");
+      message.channel.send(memeEmbed);
+    };
   }
 };

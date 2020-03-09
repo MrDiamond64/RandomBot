@@ -9,10 +9,11 @@ module.exports = {
   execute(message, args) {
     const rpc = [`rock`, `paper`, `scissors`];
     var selection = rpc[~~(Math.random() * rpc.length)];
+    var selection2 = rpc[~~(Math.random() * rpc.length)];
 
-    if (args == "") {
-      var userpick = rpc[~~(Math.random() * rpc.length)];
-    } else {
+    if (!args.length) {
+      var userpick = selection2
+    } else if (args){ 
       var userpick = args[0];
       userpick = args.shift().toLowerCase();
     }

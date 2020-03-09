@@ -1,6 +1,6 @@
 const { prefix, botownerID } = require("../config.json");
 const Discord = require("discord.js");
-const error = require("../util/error.js")
+const error = require("../util/error.js");
 
 module.exports = {
   name: "ban",
@@ -9,11 +9,12 @@ module.exports = {
   guildOnly: true,
   args: true,
   execute(message, args) {
-    if (!message.member.hasPermission("BAN_MEMBERS" || "ADMINISTRATOR")) return error(message, `${prefix}ban`, "BAN_MEMBERS")
+    if (!message.member.hasPermission("BAN_MEMBERS" || "ADMINISTRATOR"))
+      return error.missingPerm(message, "ban", "BAN_MEMBERS");
     message.react("🔨");
     const member =
       message.mentions.members.first() || message.guild.members.get(args[0]);
-    
+
     if (!member.bannable)
       return message.reply(
         "I cannot ban this user! Do they have a higher role? Do I have ban permissions?"
@@ -28,13 +29,6 @@ module.exports = {
         )
       );
 
-    // Mod Logs
-    const logschannel = member.guild.channels.find(
-      ch => ch.name === "logs",
-      "modlogs",
-      "mod-logs"
-    );
-    if (!logschannel) return;
     const banLog = new Discord.RichEmbed()
       .setColor("RANDOM")
       .setTitle("Member Banned")
@@ -43,7 +37,6 @@ module.exports = {
       .addField("Moderator", message.author)
       .setTimestamp()
       .setFooter("Beep Boop Bop! Im a bot using discord.js!");
-    logschannel.send(banLog);
     message.channel.send(banLog);
   }
 };

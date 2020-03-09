@@ -1,19 +1,19 @@
 // Bootup needed tools
 const fs = require("fs");
 const Discord = require("discord.js");
+const http = require("http");
 const express = require("express");
-const http = require('http');
 const app = express();
 const path = require("path");
 let serverPrefix = JSON.parse(fs.readFileSync("./.data/prefixes.json", "utf8"));
-const log = require("./util/log.js")
+const log = require("./util/log.js");
 // Load Needed Variables
 const { token, prefix, bannedIDs } = require("./config.json");
 // Colections
 const client = new Discord.Client();
 client.commands = new Discord.Collection();
 const cooldowns = new Discord.Collection();
- 
+
 // Command Files Search
 const commandFiles = fs
   .readdirSync("./commands")
@@ -33,9 +33,8 @@ client.once("ready", async () => {
   console.log(
     `Bot Status: ${client.users.size} Users, ${client.channels.size} Channels in ${client.guilds.size} Servers.`
   );
-  client.user.setActivity(
-    `${prefix}help, Serving ${client.guilds.size} servers with ${client.users.size} Users!`
-  );
+  client.user.setActivity(`${prefix}help | ${client.guilds.size} servers!`);
+  client.user.setStatus(`idle`);
 });
 
 // Guild Checking
@@ -43,24 +42,17 @@ client.on("guildCreate", guild => {
   console.log(
     `New Server joined: ${guild.name} (id: ${guild.id}). This guild has ${guild.memberCount} members!`
   );
-  log.joinGuild(guild)
-  client.user.setActivity(
-    `Prefix ${prefix}, Serving ${client.guilds.size} servers with ${client.users.size} Users!`
-  );
+  log.joinGuild(guild);
+  client.user.setActivity(`${prefix}help | ${client.guilds.size} servers!`);
 });
 
 client.on("guildDelete", guild => {
   console.log(`Removed By This Server: ${guild.name} (id: ${guild.id})`);
-    log.leaveGuild(guild)
-  client.user.setActivity(
-    `Prefix ${prefix}, Serving ${client.guilds.size} servers with ${client.users.size} Users!`
-  );
+  log.leaveGuild(guild);
+  client.user.setActivity(`${prefix}help | ${client.guilds.size} servers!`);
 });
 
 client.on("guildMemberAdd", async member => {
-  client.user.setActivity(
-    `Prefix ${prefix}, Serving ${client.guilds.size} servers with ${client.users.size} Users!`
-  );
   const channel = member.guild.channels.find(
     ch => ch.name === "welcome",
     "member-log",
@@ -68,15 +60,10 @@ client.on("guildMemberAdd", async member => {
   );
   if (!channel) return;
   //channel.send(`Welcome to the server, ${member}!`, attachment);
-  channel.send(
-    `Welcome ${member}! :tada:`
-  );
+  channel.send(`Welcome ${member}! :tada:`);
 });
 
 client.on("guildMemberRemove", async member => {
-  client.user.setActivity(
-    `Prefix ${prefix}, Serving ${client.guilds.size} servers with ${client.users.size} Users!`
-  );
   const channel = member.guild.channels.find(
     ch => ch.name === "welcome",
     "member-log",
@@ -85,20 +72,21 @@ client.on("guildMemberRemove", async member => {
   );
   if (!channel) return;
   //channel.send(`Welcome to the server, ${member}!`, attachment);
-  channel.send(
-    `${member} Just Left :slight_frown:`
-  );
+  channel.send(`${member} Just Left :slight_frown:`);
 });
 
 // Command Handler
 client.on("message", async message => {
   serverPrefix = JSON.parse(fs.readFileSync("./.data/prefixes.json", "utf8"));
-  if(!serverPrefix[message.guild.id]) {
-    serverPrefix[message.guild.id] = {
-      prefixes: prefix
+  if (message.guild) {
+    if (!serverPrefix[message.guild.id]) {
+      serverPrefix[message.guild.id] = {
+        prefixes: prefix
+      };
     }
-  }
-  let usePrefix = serverPrefix[message.guild.id].prefixes
+    let usePrefix = serverPrefix[message.guild.id].prefixes;
+  } else var usePrefix = prefix;
+  usePrefix = prefix;
   if (!message.content.startsWith(usePrefix) || message.author.bot) return;
   const args = message.content.slice(prefix.length).split(/ +/);
   const commandName = args.shift().toLowerCase();
@@ -109,11 +97,11 @@ client.on("message", async message => {
       cmd => cmd.aliases && cmd.aliases.includes(commandName)
     );
   if (!command) return;
-  const messageAuthor = `${message.author.tag} with the ID of ${message.author.id}`
+  const messageAuthor = `${message.author.tag} with the ID of ${message.author.id}`;
   console.log(
     ` ${message.author.tag} with the ID of ${message.author.id} used the command ${prefix}${commandName} ${argstring} `
   );
-//  log.logCommand(message, argstring, commandName, messageAuthor)
+  //  log.logCommand(message, argstring, commandName, messageAuthor)
   if (command.guildOnly && message.channel.type !== "text") {
     message.react("❌");
     const guildCommand = new Discord.RichEmbed()
@@ -132,21 +120,18 @@ client.on("message", async message => {
   if (command.args && !args.length) {
     if (command.usage) {
       message.react("❌");
-      const argumentsNeeded = new Discord.RichEmbed()
-        .setColor("RED")
-        .setTitle("Error")
-        .setDescription(`Arguments Needed`)
+      const commandHelp = new Discord.RichEmbed()
+        .setColor("RANDOM")
+        .setTitle("Help")
+        .setDescription(`${usePrefix}${commandName} Help `)
+        .addField(`Command Name `, commandName)
         .addField(
-          `To use this command you need arguments!`,
-          `Command: ${usePrefix}${commandName}`
-        )
-        .addField(
-          "Command Usage:",
-          `**${usePrefix}${command.name} ${command.usage}**`
+          "Command Usage",
+          `${usePrefix}${commandName} ${command.usage}`
         )
         .setTimestamp()
         .setFooter("Beep Boop Bop! Im a bot using discord.js!");
-      message.reply(argumentsNeeded);
+      message.reply(commandHelp);
       return;
     }
   }
@@ -185,7 +170,7 @@ client.on("message", async message => {
       command.execute(message, args, argstring, commandName);
     } catch (error) {
       console.error(error);
-//      log.logError(message, commandName, error)
+      //      log.logError(message, commandName, error)
       message.react("❌");
       const commandCrash = new Discord.RichEmbed()
         .setColor("RED")
@@ -211,4 +196,19 @@ client.on("error", error => {
     console.error("Unhandled promise rejection:", error);
   });
 client.on("error", console.error);
-client.login(token);
+client.login(process.env.TOKEN);
+// Express Modules
+
+app.use(express.static("public"));
+
+app.get("/", (request, response) => {
+  response.sendFile(__dirname + "/views/index.html");
+});
+
+app.get("/dreams", (request, response) => {
+  response.json("../public/client.js");
+});
+
+const listener = app.listen(process.env.PORT, () => {
+  console.log("Your app is listening on port " + listener.address().port);
+});

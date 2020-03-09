@@ -10,7 +10,7 @@ module.exports = {
   description: "Sets A Server Wide Prefix",
   execute(message, args) {
     if (args == "") {
-      if (prefixes[message.guild.id]) {
+      if (!prefixes[message.guild.id]) {
         prefixes[message.guild.id] = {
           prefixes: prefix
         };

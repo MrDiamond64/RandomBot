@@ -4,3 +4,7 @@
 
 # .env secrets
 .env
+
+
+# other stuff
+server.js

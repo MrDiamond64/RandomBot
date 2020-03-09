@@ -11,12 +11,14 @@ module.exports = {
   execute(message, args) {
     message.react("📜");
     const { commands } = message.client;
-    if (!serverPrefix[message.guild.id]) {
-      serverPrefix[message.guild.id] = {
-        prefixes: prefix
-      };
-    }
-    let prefixes = serverPrefix[message.guild.id].prefixes;
+    if (message.guild) {
+      if (!serverPrefix[message.guild.id]) {
+        serverPrefix[message.guild.id] = {
+          prefixes: prefix
+        };
+      }
+      let prefixes = serverPrefix[message.guild.id].prefixes;
+    } else var prefixes = prefix
     if (!args.length) {
       var commandList = commands.map(command => command.name).join(", ");
       var helpCommand = new Discord.RichEmbed()
@@ -27,7 +29,7 @@ module.exports = {
         .addField("Command:", commandList, true)
         .addField(
           "Command Usage",
-          `You can use \`${prefixes}help [command name]\`to find the commands usage.`
+          `Use \`${prefixes}help [command name]\` to find the command usage.`
         )
         .addField("Total Commands:", commands.size)
         .setTimestamp()
