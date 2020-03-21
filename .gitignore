@@ -1,10 +1,7 @@
 # database content
-.data/prefixes.json
-
 
 # .env secrets
 .env
 
 
 # other stuff
-server.js

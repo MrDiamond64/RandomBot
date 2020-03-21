@@ -1,8 +1,8 @@
 dependencies:
-  '@zuzak/owo': 1.5.1
-  discord.js: 11.5.1
+  '@zuzak/owo': 1.6.0
+  discord.js: 11.6.2
   express: 4.17.1
-  figlet: 1.2.4
+  figlet: 1.3.0
   giphy-js-sdk-core: 1.0.6
   nodejs-base64: 1.0.3
   one-liner-joke: 1.2.0
@@ -10,13 +10,13 @@ dependencies:
 devDependencies:
   nodemon: 1.18.9
 packages:
-  /@zuzak/owo/1.5.1:
+  /@zuzak/owo/1.6.0:
     dependencies:
       random-item: 1.0.0
       replace-string: 2.0.0
     dev: false
     resolution:
-      integrity: sha512-319OZDJm+nBB9VANSenfOaTsDzoos7MUeKqQm+GeJccaOCr4ey9EZ59bnGScUKL11aV41rUk6zb865xJEMeU8Q==
+      integrity: sha512-FvCyHIiLr/3pG63XrD8Ws1ZrJocangii9VhxRvHe8TDIi1lI2xgexDt4zOXqobK+4Xj8zNvhtxRmhHVx19wsNQ==
   /abbrev/1.1.1:
     dev: true
     resolution:
@@ -433,17 +433,18 @@ packages:
     dev: false
     resolution:
       integrity: sha1-l4hXRCxEdJ5CBmE+N5RiBYJqvYA=
-  /discord.js/11.5.1:
+  /discord.js/11.6.2:
     dependencies:
       long: 4.0.0
-      prism-media: 0.0.3
+      prism-media: 0.0.4
       snekfetch: 3.6.4
-      tweetnacl: 1.0.1
+      tweetnacl: 1.0.3
       ws: 6.2.1
     dev: false
     engines:
       node: '>=6.0.0'
     peerDependencies:
+      '@discordjs/opus': ^0.1.0
       '@discordjs/uws': ^10.149.0
       bufferutil: ^4.0.0
       erlpack: discordapp/erlpack
@@ -452,7 +453,7 @@ packages:
       opusscript: ^0.0.6
       sodium: ^2.0.3
     resolution:
-      integrity: sha512-tGhV5xaZXE3Z+4uXJb3hYM6gQ1NmnSxp9PClcsSAYFVRzH6AJH74040mO3afPDMWEAlj8XsoPXXTJHTxesqcGw==
+      integrity: sha512-QwN7RBb705qqvxletW41aw8ScZJh4LUVWtGNdLA1/N4od1pf8pueDWdnKLqw9pAud6cg9AADcCkm8os1YHWESg==
   /dot-prop/4.2.0:
     dependencies:
       is-obj: 1.0.1
@@ -598,12 +599,12 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha512-Nmb6QXkELsuBr24CJSkilo6UHHgbekK5UiZgfE6UHD3Eb27YC6oD+bhcT+tJ6cl8dmsgdQxnWlcry8ksBIBLpw==
-  /figlet/1.2.4:
+  /figlet/1.3.0:
     dev: false
     engines:
       node: '>= 0.4.0'
     resolution:
-      integrity: sha512-mv8YA9RruB4C5QawPaD29rEVx3N97ZTyNrE4DAfbhuo6tpcMdKnPVo8MlyT3RP5uPcg5M14bEJBq7kjFf4kAWg==
+      integrity: sha512-f7A8aOJAfyehLJ7lQ6rEA8WJw7kOk3lfWRi5piSjkzbK5YkI5sqO8eiLHz1ehO+DM0QYB85i8VfA6XIGUbU1dg==
   /file-uri-to-path/1.0.0:
     dev: true
     optional: true
@@ -1412,10 +1413,10 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha1-1PRWKwzjaW5BrFLQ4ALlemNdxtw=
-  /prism-media/0.0.3:
+  /prism-media/0.0.4:
     dev: false
     resolution:
-      integrity: sha512-c9KkNifSMU/iXT8FFTaBwBMr+rdVcN+H/uNv1o+CuFeTThNZNTOrQ+RgXA1yL/DeLk098duAeRPP3QNPNbhxYQ==
+      integrity: sha512-dG2w7WtovUa4SiYTdWn9H8Bd4JNdei2djtkP/Bk9fXq81j5Q15ZPHYSwhUVvBRbp5zMkGtu0Yk62HuMcly0pRw==
   /process-nextick-args/2.0.1:
     dev: true
     resolution:
@@ -1844,10 +1845,10 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-WBx8Uy5TLtOSRtIq+M03/sKDrXCLHxwDcquSP2c43Le03/9serjQBIztjRz6FkJez9D/hleyAXTBGLwwZUw9lA==
-  /tweetnacl/1.0.1:
+  /tweetnacl/1.0.3:
     dev: false
     resolution:
-      integrity: sha512-kcoMoKTPYnoeS50tzoqjPY3Uv9axeuuFAZY9M/9zFnhoVvRfxz9K29IMPD7jGmt2c8SW7i3gT9WqDl2+nV7p4A==
+      integrity: sha512-6rt+RN7aOi1nGMyC4Xa5DdYiukl2UWCbcJft7YhxReBGQD7OAM8Pbxw6YMo4r2diNEA8FEmu32YOn9rhaiE5yw==
   /type-is/1.6.18:
     dependencies:
       media-typer: 0.3.0
@@ -2007,10 +2008,10 @@ registry: 'https://registry.npmjs.org/'
 shrinkwrapMinorVersion: 9
 shrinkwrapVersion: 3
 specifiers:
-  '@zuzak/owo': ^1.5.1
-  discord.js: ^11.5.1
+  '@zuzak/owo': ^1.6.0
+  discord.js: ^11.6.2
   express: ^4.17.1
-  figlet: ^1.2.4
+  figlet: ^1.3.0
   giphy-js-sdk-core: ^1.0.6
   nodejs-base64: ^1.0.3
   nodemon: v1.18.9

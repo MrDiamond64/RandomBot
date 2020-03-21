@@ -1,6 +1,6 @@
 const fs = require("fs");
 const { prefix } = require("../config.json");
-let serverPrefix = JSON.parse(fs.readFileSync("./.data/prefixes.json", "utf8"));
+let serverPrefix = JSON.parse(fs.readFileSync("./database/prefixes.json", "utf8"));
 const Discord = require("discord.js");
 
 module.exports = {
@@ -17,16 +17,15 @@ module.exports = {
           prefixes: prefix
         };
       }
-      let prefixes = serverPrefix[message.guild.id].prefixes;
+      var prefixes = serverPrefix[message.guild.id].prefixes
     } else var prefixes = prefix
     if (!args.length) {
-      var commandList = commands.map(command => command.name).join(", ");
+      var commandList = commands.map(command => command.name).join(`, ${prefixes}`);
       var helpCommand = new Discord.RichEmbed()
         .setColor("RANDOM")
         .setTitle("Help Command")
         .setDescription(`List of All My Commands`)
-        .addField("Prefix:", prefixes)
-        .addField("Command:", commandList, true)
+        .addField("Command:", `${prefixes}${commandList}`, true)
         .addField(
           "Command Usage",
           `Use \`${prefixes}help [command name]\` to find the command usage.`

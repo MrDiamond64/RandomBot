@@ -9,7 +9,7 @@ module.exports = {
   execute(message, args) {
     message.react("🏓");
 
-    const pingInfo = new Discord.RichEmbed()
+    const pingInfo = new Discord.RichEmbed() 
       .setColor("RANDOM")
       .setTitle("Pong!")
       .setDescription("Shows Bot Latency And ping")
@@ -18,7 +18,7 @@ module.exports = {
         `${Math.floor(Date.now() - message.createdTimestamp)}ms`,
         true
       )
-      .addField("Api Latency:", `${Math.round(client.ping)}ms`, false)
+      .addField("Api Latency:", `${Math.round(message.client.ping)}ms`, false)
       .setTimestamp()
       .setFooter("Beep Boop Bop! Im a bot made in discord.js!");
     message.channel.send(pingInfo);

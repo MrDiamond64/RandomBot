@@ -20,10 +20,10 @@ module.exports = {
       .setColor("RANDOM")
       .setTitle("Bot Status & Info!")
       .addField("Prefix:", `${prefix}`, true)
-      .addField("Discord,js Version:", "11.5.1")
-      .addField("Node.js Version", "10.15.3")
+      .addField("Discord,js Version:", "11.6.2")
+      .addField("Node.js Version", "12.16.1")
       .addField("Total RAM Free:", `${freeRAM}/${totalRAM}`)
-      .addField("Total Command:", commands.size)
+      .addField("Total Commands:", commands.size)
       .setTimestamp()
       .setFooter("Beep Boop Bop! Im a bot made in discord.js!");
     message.channel.send(botStatsCommand);

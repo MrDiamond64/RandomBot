@@ -10,10 +10,10 @@ module.exports = {
   execute(message, args) {
     message.react("🗑️");
     if (!message.member.hasPermission("MANAGE_MESSAGES")) {
-      message.reply(
+     message.reply(
         "Uhmm NO! You dont have the right permissions to delete messages!!!"
       );
-      return;
+     return;
     }
     const amount = parseInt(args[0]) + 1;
     if (isNaN(amount)) {

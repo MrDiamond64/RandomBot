@@ -9,14 +9,12 @@ module.exports = {
     if (args[0] == "") {
       let discrim = message.author.discriminator;
     } else var discrim = args[0];
-    if (discrim >= `9999` || discrim <= `0001`) {
-      message.reply(`Invalid Discriminator! Pick One between 0001 to 9999`);
-      return;
-    }
+    if (discrim >= `9999` || discrim <= `0001`) return message.reply(`Invalid Discriminator! Pick One between 0001 to 9999`)
     // allMember 
-    var members= message.guild.members
+    var allMembers = message.guild.members
       
-  //var members = allMember.indexOf("#${discrim}")
+  var members = allMembers.exists('discriminator', discrim)
+    .forEach(members => members = members, allMembers.tag)
 
     if (members == "")
       return message.reply(

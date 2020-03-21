@@ -9,7 +9,7 @@ module.exports = {
   args: true,
   guildOnly: true,
   execute(message, args, argstring) {
-    if (!message.member.hasPermission("BAN_MEMBERS")) {
+    if (!message.member.hasPermission("MANAGE_NICKNAMES")) {
       message.reply(
         "Uhmm NO! You dont have the right permissions to ban people!!!"
       );

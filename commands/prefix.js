@@ -1,6 +1,8 @@
 const Discord = require("discord.js");
 const fs = require("fs");
-let prefixes = JSON.parse(fs.readFileSync("./.data/prefixes.json", "utf8"));
+let serverPrefix = JSON.parse(
+  fs.readFileSync("./.data/prefixes.json", "utf8")
+);
 const { prefix } = require("../config.json");
 
 module.exports = {
@@ -8,34 +10,52 @@ module.exports = {
   guildOnly: true,
   usage: `[wanted prefix]`,
   description: "Sets A Server Wide Prefix",
-  execute(message, args) {
+  execute: async (message, args) => {
     if (args == "") {
-      if (!prefixes[message.guild.id]) {
-        prefixes[message.guild.id] = {
+      if (!serverPrefix[message.guild.id]) {
+        serverPrefix[message.guild.id] = {
           prefixes: prefix
         };
       }
       message.reply(
-        `Server Prefix: ${JSON.stringify(prefixes[message.guild.id].prefixes)}`
+        `Server Prefix: ${JSON.stringify(
+          serverPrefix[message.guild.id].prefixes
+        )}`
       );
       return;
     }
     if (!message.member.hasPermission("MANAGE_GUILD")) {
-      message.reply(`placeholder`);
+      message.reply(
+        `Ummm, you need the \`MANAGE_SERVER\` permission to change the server prefix!!!`
+      );
     }
 
-    prefixes[message.guild.id] = {
+    if (!serverPrefix[message.guild.id]) {
+      var oldPrefix = prefix;
+    } else var oldPrefix = serverPrefix[message.guild.id].prefixes;
+    if (args[0] == oldPrefix)
+      return message.reply(
+        `:facepalm: Moron, "${args[0]}" is already the prefix.`
+      );
+
+    serverPrefix[message.guild.id] = {
       prefixes: args[0]
     };
 
-    fs.writeFile("./.data/prefixes.json", JSON.stringify(prefixes), err => {
-      if (err) console.log(err);
-    });
+    await fs.writeFile(
+      "./.data/prefixes.json",
+      JSON.stringify(serverPrefix),
+      err => {
+        if (err) console.log(err);
+      }
+    );
 
     let prefixEmbed = new Discord.RichEmbed()
-      .setColor("#ff9900")
+      .setColor("RANDOM")
       .setTitle("Prefix Set!")
-      .setDescription(`Set to ${args[0]}`);
+      .setDescription(`Set to ${args[0]}`)
+      .setTimestamp()
+      .setFooter("Beep Boop Bop! Im a bot using discord.js!");
     message.channel.send(prefixEmbed);
   }
 };

@@ -12,14 +12,13 @@ module.exports = {
       message.mentions.members.first() ||
       message.guild.members.get(args[0]) ||
       message.member;
-    let target = message.mentions.users.first() || message.author;
 
     var userPresence = member.user.presence;
     JSON.stringify(userPresence);
 
     const userInfo = new Discord.RichEmbed()
       .setTitle("Shows user Information")
-      .setThumbnail(target.displayAvatarURL)
+      .setThumbnail(member.user.displayAvatarURL)
       .setDescription("User Information")
       .setColor(`RANDOM`)
       .addField("Full Username", member.user.tag)

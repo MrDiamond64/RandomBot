@@ -3,7 +3,7 @@ const { prefix } = require("../config.json");
 module.exports = {
   name: "arguments",
   description:
-    "Find Out Why Your Mom And Dad wants a divorce! Na JK this is a test tool!.",
+    "com.randombot4211.command_name.arguments.module_exports.description",
   usage: `[argument]`,
   args: true,
   execute(message, args, argstring) {
