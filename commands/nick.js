@@ -11,7 +11,7 @@ module.exports = {
   execute(message, args, argstring) {
     if (!message.member.hasPermission("MANAGE_NICKNAMES")) {
       message.reply(
-        "Uhmm NO! You dont have the right permissions to ban people!!!"
+        "Uhmm NO! You dont have the right permissions to change nicknames!!!"
       );
       return;
     }
